@@ -1,0 +1,53 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "iphone 7231",
+      "price": 2000,
+      "content": "this is iphone 7",
+      "status": "new"
+    },
+    {
+      "id": 2,
+      "name": "iphone 7",
+      "price": 2000,
+      "content": "this is iphone 7",
+      "status": "new"
+    },
+    {
+      "id": 3,
+      "name": "iphone 8",
+      "price": 3000,
+      "content": "this is iphone 8",
+      "status": "active"
+    },
+    {
+      "id": 4,
+      "name": "iphone 9",
+      "price": "5000",
+      "content": "nothing",
+      "status": "new"
+    },
+    {
+      "id": 5,
+      "name": "iphone 10",
+      "price": "6000",
+      "content": "nothing",
+      "status": "active"
+    },
+    {
+      "id": 7,
+      "name": "ip 13",
+      "price": "123",
+      "content": "nothing",
+      "status": "new"
+    },
+    {
+      "id": 8,
+      "name": "iphone 14",
+      "price": "123",
+      "content": "nothing",
+      "status": "new"
+    }
+  ]
+}
