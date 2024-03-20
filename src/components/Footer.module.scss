@@ -1,0 +1,20 @@
+.container {
+  width: auto;
+  height: 50px;
+  background-color: #ebebeb;
+  margin-top: -15px;
+  padding: 20px 100px;
+
+  ul {
+    float: right;
+    li {
+      display: inline-block;
+      min-width: 70px;
+      padding: 0 5px;
+
+      a {
+        text-decoration: none;
+      }
+    }
+  }
+}
