@@ -1,13 +1,52 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Register from "./Register";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import Login from "./Login";
+import Admin from "./Admin";
+import AccessDenied from "./AccessDenied";
+import ProtectedRoute from "./ProtectedRoute";
+import ManagedProduct from "./ManagedProduct";
+import ManagedCustomer from "./ManagedCustomer";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+const root = ReactDOM.createRoot(document.getElementById("root"));
+let user =
+  sessionStorage.getItem("user") != null
+    ? JSON.parse(sessionStorage.getItem("user"))
+    : "";
+let role = user.role;
+let AccessAdminRoles = ["admin", "employee"];
 root.render(
   <React.StrictMode>
-    <App />
+    <ToastContainer theme="colored" />
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" Component={App} />
+        <Route path="/register" Component={Register} />
+        <Route path="/login" Component={Login} />
+        <Route path="/403" element={<AccessDenied />}></Route>
+        <Route
+          path="/admin"
+          element={
+            <ProtectedRoute
+              user={user}
+              isAccess={!!user && AccessAdminRoles.includes(role)}
+              redirectPath="/login"
+            ></ProtectedRoute>
+          }
+        >
+          <Route index Component={Admin} />
+          <Route path="product" Component={ManagedProduct} />
+          <Route path="customer" Component={ManagedCustomer}/>
+        </Route>
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
 

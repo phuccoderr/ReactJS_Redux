@@ -1,0 +1,44 @@
+{
+  "users": [
+    {
+      "id": "admin",
+      "username": "admin",
+      "email": "phuc@gmail.com",
+      "password": "0123456789",
+      "role": "admin"
+    },
+    {
+      "id": "user",
+      "username": "user",
+      "email": "user@gmail.com",
+      "password": "0123456789",
+      "role": "user"
+    }
+  ],
+  "permissions": [
+    {
+      "role": "admin",
+      "page": "customer",
+      "access": true,
+      "create": true,
+      "update": true,
+      "delete": true
+    },
+    {
+      "role": "user",
+      "page": "customer",
+      "access": false,
+      "create": false,
+      "update": false,
+      "delete": false
+    },
+    {
+      "role": "employee",
+      "page": "customer",
+      "access": true,
+      "create": true,
+      "update": true,
+      "delete": false
+    }
+  ]
+}
