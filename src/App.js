@@ -1,23 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import UserList from "./components/UserList";
+import AddUser from "./components/AddUser";
+import { ToastContainer, toast } from "react-toastify";
 
 function App() {
+  const notify = () => toast.success("Wow so easy !");
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ToastContainer />
+      <button onClick={notify}>Notify !</button>
+      <h1>Demo working rest api</h1>
+      <AddUser />
+      <UserList />
+      <ToastContainer />
+      
     </div>
   );
 }

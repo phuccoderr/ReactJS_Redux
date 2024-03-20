@@ -1,0 +1,27 @@
+.title {
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 3rem;
+}
+
+.form {
+    max-width: 768px;
+    margin: auto;
+
+    input,textarea {
+        border-radius: 0;
+        margin-bottom: 1.45px;
+    }
+}
+
+.pageWrapper {
+    text-align: center;
+    margin: 100px auto auto auto;
+
+}
+
+.invalidFeedBack {
+    text-align: left;
+    color: #ff4040;
+    font-size: 0.8rem;
+}
