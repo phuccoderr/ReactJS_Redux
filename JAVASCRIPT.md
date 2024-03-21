@@ -46,7 +46,7 @@
   }
   var java = new Course('java',100);
   ~~~
-  * Rest:
+  * Destructuring:
   ~~~
   var array = ['java','js','python'];
   var [a, ...rest] = array;
