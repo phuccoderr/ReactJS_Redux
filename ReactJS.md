@@ -57,6 +57,7 @@ const handleTotal = useMemo(func,[]);
 * useContext
 ~~~
   - thường khai báo ở file index.js, khai báo theme
-  - component con nhận bằng cách  useContext và truyền tên trong nó -  useContext(theme)
-const receiveContext = useContext(theme);
+export const UserContext = React.createContext("root");
+  - component con nhận bằng cách  useContext và truyền tên trong nó -  useContext(UserContext)
+const receiveContext = useContext(UserContext);
 ~~~
