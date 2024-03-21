@@ -61,3 +61,53 @@ export const UserContext = React.createContext("root");
   - component con nhận bằng cách  useContext và truyền tên trong nó -  useContext(UserContext)
 const receiveContext = useContext(UserContext);
 ~~~
+* useReducer
+~~~
+1. initialState
+const intitalState = 0;
+2. Actions
+const UP_ACTION = 'up';
+3. Reducer
+const reducer = (state,action) => {
+  switch(action) {
+      case UP_ACTION:
+          return state + 1;
+      default:
+          throw new Error('Invalid Action');    
+  }
+}
+4. dispatch
+const [count, dispatch] = useReducer(reducer,initialState);
+onClick={ () => dispatch(UP_ACTION)  }
+~~~
+* React Router
+~~~
+<BrowserRouter>
+  <Routes>
+    <Route path='/' component={Component} /> muốn truyền props thì element={<Component props />} 
+  </Routes>
+</BrowserRouter>
+---------
+//chuyển trang bình thường khi click
+<Link to="/">Home</Link>
+
+//khi xử lí logic thành công dùng Navigate, replace=true để xoá trang back lại
+{props.updateSuccess === true && (
+  <Navigate to="/manage-product" replace={true} />
+)}
+
+//khi xử lý trong hàm
+const navigate = useNavigate();
+useEffect(() => {
+  if (userIsInactive) {
+      navigate("/session-timed-out");
+  }
+}, []);
+~~~
+* useParams
+~~~
+<Route path="/users/update/:usersId" element={<UpdateUser />} />
+-----
+const params = useParams();
+const userId = params.usersId;
+~~~
