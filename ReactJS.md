@@ -104,10 +104,17 @@ useEffect(() => {
   }
 }, []);
 ~~~
-* useParams
+* useParams & useSearchParams
 ~~~
 <Route path="/users/update/:usersId" element={<UpdateUser />} />
 -----
 const params = useParams();
 const userId = params.usersId;
+---
+let [searchParams, setSearchParams] = useSearchParams();
+setSearchParams({status: 'all'});
+- khi muốn nhập thủ công trên url ví dụ ?state= (tự ghi trên thanh url) thì sẽ xử lí như sau:
+let location = useLocation();
+const params = queryString.parse(location.search); //phải add thêm thư viện queryString
+return params.status || "all";
 ~~~
